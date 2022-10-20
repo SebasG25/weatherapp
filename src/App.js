@@ -41,7 +41,7 @@ function App() {
       <div className="container">
         <div className="top">
           <div className="location">
-            {data.name ? <p>{data.name}</p> : <p>Loading...</p>}
+            {data.name ? <p>{data.name}, {new Intl.DisplayNames(['es'], {type: 'region'}).of(data.sys.country)}</p> : <p>Loading...</p>}
           </div>
           <div className="temp">
             {data.main ? <h1>{kelvinToCelsius(data.main.temp)}°C</h1> : <h1>Loading...</h1>}
